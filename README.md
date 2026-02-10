@@ -48,4 +48,4 @@ Library Management System built using MySQL, modeling real-world library operati
 Objective: Create a CTAS (Create Table As Select) query to identify overdue books and calculate fines. Description: Write a CTAS query to create a new table that lists each member and the books they have issued but not returned within 30 days. The table should include: The number of overdue books. The total fines, with each day's fine calculated at $0.50. The number of books issued by each member. The resulting table should show: Member ID, Number of overdue books, Total fines.
 
 ### 3. Final Outcome
-This roadmap demonstrates end-to-end SQL system design, combining schema modeling, analytics, audit safety, and production-style reporting—aligned with real Data Analyst and SQL Developer workflows.
+This project goes beyond basic CRUD operations to explore high-level data analytics. Through the use of Window Functions, CTAS, and dynamic filtering, the system provides granular visibility into inventory trends and member behavior. The architecture prioritizes query optimization and data quality, ensuring reliable performance for decision-support workflows
