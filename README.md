@@ -27,6 +27,22 @@ Library Management System built using MySQL, modeling real-world library operati
 - Task 9 – Seed Data Insertion - Insert realistic seed data into all tables to simulate operational library data.
 - Task 10 – Schema Validation - Validate table creation and relationships using standard SELECT queries.
 
+#### CRUD Operations
+- **Create**: Inserted sample records into the `books` table.
+- **Read**: Retrieved and displayed data from various tables.
+- **Update**: Updated records in the `employees` table.
+- **Delete**: Removed records from the `members` table as needed.
+
+#### Data Retrival 
+- **Task01:** List Members Who Have Issued More Than One Book.
+- **Task02:** Use CTAS to generate new tables based on query results - each book and total `book_issued_cnt`'.
+- **Task03:** Retrieve All Books in a Specific Category.
+- **Task04:** List Members Who Registered in the Last 180 Days.
+- **Task05:** List Employees with Their Branch Manager's Name and their branch details
+- **Task06:** Create a Table of Books with Rental Price Above a Certain Threshold
+- **Task07:** Retrieve the List of Books Not Yet Returned
+     
+
 🟡 INTERMEDIATE TASKS (CRUD & Business Analytics)
 Task 11 – CRUD Operations - Implement Create, Read, Update, and Delete operations across core entities.
 Task 12 – Controlled Updates with Safety Checks - Override SQL safety updates only when using primary keys for controlled data modification.
