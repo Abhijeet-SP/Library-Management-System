@@ -9,4 +9,4 @@ Library Management System built using MySQL, modeling real-world library operati
 4. **Advanced SQL Queries**: Develop complex queries to analyze and retrieve specific data.
 
 ### 1. Database Design
-![ERD](https://github.com/najirh/Library-System-Management---P2/blob/main/library_erd.png)
+![ERD]([https://github.com/najirh/Library-System-Management---P2/blob/main/library_erd.png](https://github.com/Abhijeet-SP/Library-Management-System/blob/main/Database%20Design.jpg)
