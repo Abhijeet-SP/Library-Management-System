@@ -18,9 +18,8 @@ Library Management System built using MySQL, modeling real-world library operati
 - **Task01:** Create and initialize the library database and switch the active context for all operations.
 - **Task02:** Create `branch`, `members`, `employees`, `books`, `issued_status`, `return_status`.
 - **Task03:** Insert the data in each table.
-- **Task04:** List Members Who Registered in the Last 180 Days.
-- **Task05:** Resolve Column Ambiguity - Rename the status column to inventory_status to clearly represent inventory availability
-- **Task06:** Update the remaining data in `return_status` using Update command
+- **Task04:** Resolve Column Ambiguity - Rename the status column to inventory_status to clearly represent inventory availability
+- **Task05:** Update the remaining data in `return_status` using Update command
 
 #### CRUD Operations
 - **Create**: Inserted sample records into the `books` table.
