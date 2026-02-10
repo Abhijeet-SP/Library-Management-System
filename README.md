@@ -13,18 +13,40 @@ Library Management System built using MySQL, modeling real-world library operati
 ![Schema Screenshot](Database_Design.jpg)
 
 ### 2. Task List 
-🟢 BEGINNER TASKS (Core SQL & Data Modeling)
-Task 0 – Database Initialization - Create and initialize the library database and switch the active context for all operations.
-Task 1 – Branch Table Design - Create the branch table to store branch-level details including branch ID, manager reference, address, and contact information.
-Task 2 – Employee Table Design - Create the employees table with employee details and link each employee to a branch using a foreign key to enforce referential integrity.
-Task 3 – Member Table Design - Create the members table to track registered library members along with their registration dates.
-Task 4 – Audit-Safe Member ID Handling - Intentionally maintain gaps in member IDs to simulate churn and ensure non-reusable identifiers for audit safety.
-Task 5 – Book Inventory Table Design - Create the books table using ISBN as a globally unique identifier and store book metadata including category, author, and rental price.
-Task 6 – Resolve Column Ambiguity - Rename the status column to inventory_status to clearly represent inventory availability.
-Task 7 – Issue Transaction Table - Create the issued_status table to record book issuance events, linking members, employees, and books via foreign keys.
-Task 8 – Return Transaction Table - Create the return_status table to capture book return events linked to issued records.
-Task 9 – Seed Data Insertion - Insert realistic seed data into all tables to simulate operational library data.
-Task 10 – Schema Validation - Validate table creation and relationships using SELECT queries.
+🟢 Beginner Tasks (Core SQL & Data Modeling)
+
+Task 0 – Database Initialization
+Create and initialize the library database and switch the active context for all operations.
+
+Task 1 – Branch Table Design
+Create the branch table to store branch-level details including branch ID, manager reference, address, and contact information.
+
+Task 2 – Employee Table Design
+Create the employees table and link each employee to a branch using a foreign key to enforce referential integrity.
+
+Task 3 – Member Table Design
+Create the members table to track registered library members along with their registration dates.
+
+Task 4 – Audit-Safe Member ID Handling
+Maintain intentional gaps in member IDs to simulate churn and ensure non-reusable identifiers for audit safety.
+
+Task 5 – Book Inventory Table Design
+Create the books table using ISBN as a globally unique identifier and store metadata such as category, author, and rental price.
+
+Task 6 – Resolve Column Ambiguity
+Rename the status column to inventory_status to clearly represent inventory availability.
+
+Task 7 – Issue Transaction Table
+Create the issued_status table to record book issuance events, linking members, employees, and books via foreign keys.
+
+Task 8 – Return Transaction Table
+Create the return_status table to capture book return events linked to issued records.
+
+Task 9 – Seed Data Insertion
+Insert realistic seed data into all tables to simulate operational library data.
+
+Task 10 – Schema Validation
+Validate table creation and relationships using standard SELECT queries.
 
 🟡 INTERMEDIATE TASKS (CRUD & Business Analytics)
 Task 11 – CRUD Operations - Implement Create, Read, Update, and Delete operations across core entities.
