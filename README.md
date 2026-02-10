@@ -15,11 +15,9 @@ Library Management System built using MySQL, modeling real-world library operati
 ### 2. Task List 
 🟢 Beginner Tasks (Core SQL & Data Modeling)
 
-Task 0 – Database Initialization
-Create and initialize the library database and switch the active context for all operations.
+- Task 0 – Database Initialization - Create and initialize the library database and switch the active context for all operations.
 
-Task 1 – Branch Table Design
-Create the branch table to store branch-level details including branch ID, manager reference, address, and contact information.
+- Task 1 – Branch Table Design - Create the branch table to store branch-level details including branch ID, manager reference, address, and contact information.
 
 Task 2 – Employee Table Design
 Create the employees table and link each employee to a branch using a foreign key to enforce referential integrity.
