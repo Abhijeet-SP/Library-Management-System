@@ -174,7 +174,86 @@ ORDER BY issued_book_isbn;
     Description: Write a stored procedure that updates the status of a book based on its issuance or return. Specifically:
     If a book is issued, the status should change to 'no'.
     If a book is returned, the status should change to 'yes'.*/
-    
+
+-- Procedure 1: Issue a book
+
+DELIMITER $$
+
+CREATE PROCEDURE issue_book(
+    IN p_issued_id        VARCHAR(10),
+    IN p_issued_member_id VARCHAR(10),
+    IN p_issued_book_isbn VARCHAR(25),
+    IN p_issued_emp_id    VARCHAR(10)
+)
+BEGIN
+    DECLARE v_status VARCHAR(10);
+
+    -- Step 1: Check current availability of the book
+    SELECT status
+      INTO v_status
+      FROM books
+     WHERE isbn = p_issued_book_isbn;
+
+    -- Step 2: Branch on availability
+    IF v_status = 'yes' THEN
+
+        -- 2a. Record the issue
+        INSERT INTO issued_status(
+            issued_id, issued_member_id, issued_book_isbn,
+            issued_emp_id, issued_date
+        )
+        VALUES (
+            p_issued_id, p_issued_member_id, p_issued_book_isbn,
+            p_issued_emp_id, CURRENT_DATE()
+        );
+
+        -- 2b. Mark book as unavailable
+        UPDATE books
+           SET status = 'no'
+         WHERE isbn = p_issued_book_isbn;
+
+        SELECT CONCAT('Book issued successfully. ISBN: ', p_issued_book_isbn) AS message;
+
+    ELSE
+        SELECT CONCAT('Sorry, book is currently unavailable. ISBN: ', p_issued_book_isbn) AS message;
+    END IF;
+END $$
+
+DELIMITER ;
+
+-- Procedure 2: Return a book
+
+DELIMITER $$
+
+CREATE PROCEDURE return_book(
+    IN p_return_id  VARCHAR(10),
+    IN p_issued_id  VARCHAR(10)
+)
+BEGIN
+    DECLARE v_isbn  VARCHAR(25);
+    DECLARE v_title VARCHAR(80);
+
+    -- Step 1: Look up ISBN from the original issue record
+    -- (we only get issued_id from the user; books.status keys on isbn)
+    SELECT issued_book_isbn, issued_book_name
+      INTO v_isbn, v_title
+      FROM issued_status
+     WHERE issued_id = p_issued_id;
+
+    -- Step 2: Record the return
+    INSERT INTO return_status(return_id, issued_id, return_date)
+    VALUES (p_return_id, p_issued_id, CURRENT_DATE());
+
+    -- Step 3: Mark book as available again
+    UPDATE books
+       SET status = 'yes'
+     WHERE isbn = v_isbn;
+
+    SELECT CONCAT('Thank you for returning: ', v_title) AS message;
+END $$
+
+DELIMITER ;
+
 /*
 Task 20: Create Table As Select (CTAS)
 Objective: Create a CTAS (Create Table As Select) query to identify overdue books and calculate fines.
